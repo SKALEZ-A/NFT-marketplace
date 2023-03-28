@@ -1,0 +1,9 @@
+	========================	NFT      ============================
+	Basic Nft, Random IPFS Nft, Dynamic SVG Nft
+
+- install hardhat and all other dependencies
+- add .env file 
+- add the BasicNft file in the contracts folder
+- add functions from hip-721 to Nft contract, install openzeppelin contracts 
+- add the helper-hardhat-config.js, deploy folder and utils/verify folder
+- create a test folder
