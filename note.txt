@@ -6,4 +6,49 @@
 - add the BasicNft file in the contracts folder
 - add functions from hip-721 to Nft contract, install openzeppelin contracts 
 - add the helper-hardhat-config.js, deploy folder and utils/verify folder
-- create a test folder
+- create a test folder and write test 
+- create file for writing RandomIpfsNft contract inside the contracts folder 
+
+//	Using RandomIpfsNft we are building a completely randomized Nft that users will mint randomly according to rarity
+	users will pay for their Nft to the contract
+
+-	using chainlinkVrf to get random number that will be used to get a random Nft having different rarity
+-   create .sol file for writing RandomIpfsNft contract 
+-	add chainlink/contracts 
+* Mapping chainlinkVrf requests
+
+* Using IPFS and Pinata to store NFT metadata
+	- add a script to uploadToPinata in utils folder
+	- install pinata/sdk, path
+	- using pinFileToIpfs and pinJsonToIpfs to upload file and metadata
+	- create test folder under contracts and add vrfCoordinatorV2Mock 
+	- write test 
+NB: In order to work with pinata, we need API and SECRET_KEY
+	Before deploying to testnet, write test
+
+* Random IPFS Nft hosting
+	Pros: cheap
+	Cons: Someone needs to pin our data
+* Dynamic SVG On-chain Nft
+	Pros: the data is on chain and doesn't need anyone to pin it.
+	Cons: they're much more expensive
+		--creating an Nft that changes in respect to certain price of eth
+	- create a DynamicNft.sol file to write contract
+	- convert the svg image to base64 which is needed in order to convert to Uri
+		- In order to view our base64 svg as image we use:
+			data:image/svg+xml;base64,the base64 string 
+
+NB: call- is how we call functions to change the state of the blockchain
+	staticcall- this is how (at a low level) we do our "pure" and "view" functions and potentially don't change the state of the blockchain
+
+- create deploy script that mints Nft for all the contracts
+Requirements:
+	The price of the Nft 
+	The arts 
+
+
+
+THINGS TO LEARN 
+	- reentrancy attacks
+	- dust attacks
+	- flash loans attacks
