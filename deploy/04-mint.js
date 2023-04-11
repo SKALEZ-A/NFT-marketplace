@@ -40,4 +40,15 @@ module.exports = async ({ getNamedAccounts }) => {
 	console.log(
 		`random IPFS Nft index 0 tokenUri: ${await randomIpfsNft.tokenURI(0)} `
 	);
+
+	// DYNAMIC SVG NFT
+	const highValue = ethers.utils.parseEther("4000");
+	const dynamicSvgNft = await ethers.getContract("DynamicSvgNft", deployer);
+	const dynamicSvgNftmintTx = await dynamicSvgNft.mintNft(highValue.toString());
+	await dynamicSvgNftmintTx.wait(1);
+	console.log(
+		`Dynamic Svg Nft index 0 tokenURI: ${await dynamicSvgNft.tokenURI(0)}`
+	);
 };
+
+// hustle hard cant even lie bouh that
